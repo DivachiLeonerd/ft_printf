@@ -6,9 +6,11 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:13 by afonso            #+#    #+#             */
-/*   Updated: 2022/01/11 17:39:14 by afonso           ###   ########.fr       */
+/*   Updated: 2022/01/25 13:05:43 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include<ft_printf.h>
 
 void	print_integer(int i)
 {

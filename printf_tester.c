@@ -6,12 +6,13 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/01/24 18:01:16 by afonso           ###   ########.fr       */
+/*   Updated: 2022/01/25 13:05:30 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 #include<unistd.h>
+#include<ft_printf.h>
 
 int	main(void)
 {
@@ -23,6 +24,6 @@ int	main(void)
 	void		*ptr = decimal;
 	char		c = 'F';
 
-	//printf("%d %i %u %x %X %p %% %c \n", decimal, integer, u ,hexalow, hexaupp, ptr, c);
-	//ft_printf("%d %i %u %x %X %p %% %c \n", decimal, integer, u ,hexalow, hexaupp, ptr, c);
+	printf("%d %i %u %x %X %p %% %c \n", decimal, integer, u ,hexalow, hexaupp, ptr, c);
+	ft_printf("%d %i %u %x %X %p %% %c \n", decimal, integer, u ,hexalow, hexaupp, ptr, c);
 }
