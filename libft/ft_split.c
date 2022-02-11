@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 10:16:20 by afonso            #+#    #+#             */
-/*   Updated: 2021/12/27 19:26:15 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:50:58 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,7 @@ static char const	*return_word(char const *s, int c, int wordnum)
 {
 	int	i;
 	int	counter;
-	int	chrnum;
 
-	chrnum = 0;
 	counter = 0;
 	i = 0;
 	while (s[i] && (counter <= wordnum))

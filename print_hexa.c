@@ -3,25 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:16 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/01 19:05:32 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/11 16:03:40 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-static	void	print_unsignedchar(unsigned int u)
-{
-	char	*s;
-
-	s = ft_itoa(u);
-	ft_putstr_fd(s, 1);
-	free(s);
-}
-
-static	void	deci_hexa(char	*string, char format)
+static	int	deci_hexa(char	*string, char format)
 {
 	unsigned int	i;
 
@@ -31,8 +22,11 @@ static	void	deci_hexa(char	*string, char format)
 	while (string[i])
 	{
 		if (string[i] < 10)
+		{
 			string[i] = string[i] + 48;
-		if (format == 'p' || format == 'x')
+			i++;
+		}
+		if (format == 'x')
 			if (string[i] >= 10)
 				string[i] = string[i] + 87;
 		if (format == 'X')
@@ -41,20 +35,28 @@ static	void	deci_hexa(char	*string, char format)
 		i++;
 	}
 	ft_putstr_fd(string, 1);
+	return (ft_strlen(string));
 }
 
-void	print_hexa(unsigned int x, char format)
+int	print_hexa(va_list ap, char format)
 {
-	char			string[9];
+	char			string[13];
 	unsigned int	i;
 	unsigned int	strlen;
+	int				counter;
+	unsigned int	x;
 
-	if (format == 'u')
+	counter = 0;
+	if (format == 'u' || format == 'p')
 	{
-		print_unsignedchar(x);
-		return ;
+		if (format == 'u')
+			counter += print_unsignedchar(va_arg(ap, int));
+		if (format == 'p')
+			counter += print_pointer(va_arg(ap, unsigned int*));
+		return (counter);
 	}
-	i = x;
+	i = va_arg(ap, unsigned int);
+	x = i;
 	strlen = 0;
 	while (i)
 	{
@@ -69,5 +71,5 @@ void	print_hexa(unsigned int x, char format)
 		string[--strlen] = (char)(x % 16);
 		x = x / 16;
 	}
-	deci_hexa(string, format);
+	return (deci_hexa(string, format));
 }

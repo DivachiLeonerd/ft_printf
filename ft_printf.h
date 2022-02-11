@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:15 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/01 18:43:43 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:45:44 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 # include"libft.h"
 # include <stdarg.h>
 
-int		ft_printf(const char *string, ...);
-void	print_string(const char *string);
-void	print_pointer(int ptr_value, char format);
-void	print_integer(int integer, int format);
-void	print_char(unsigned int chr);
-void	print_hexa(unsigned int x, char format);
+int			ft_printf(const char *string, ...);
+int			print_string(const char *string);
+int			print_pointer(void *ptr_x);
+int			print_integer(int integer, char format);
+int			print_char(unsigned int chr);
+int			print_hexa(va_list ap, char format);
+int	print_unsignedchar(unsigned int u);
 
 #endif

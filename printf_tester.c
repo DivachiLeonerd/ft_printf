@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf_tester.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/01 18:10:13 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/11 16:05:16 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,9 @@ int	main(void)
 	unsigned int	hexalow = 48600;
 	char			c = 'F';
 
+	// print_hexa(u, 'p');
 	printf("Printf normal:\n");
-	printf("%d %i %u %s %c %x\n", decimal, integer, u, "string", c, hexalow);
+	printf("%d %i %u %s %c %x %X %p\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
 	printf("Agora o meu:\n");
-	ft_printf("%d %i %u %s %c %x \n", decimal, integer, u, "string", c, hexalow);
+	ft_printf("%d %i %u %s %c %x %X %p\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
 }

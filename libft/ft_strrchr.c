@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 16:51:08 by atereso-          #+#    #+#             */
-/*   Updated: 2021/12/19 12:20:46 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:51:18 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,9 @@ static char	*findback_c(char *start_s, const char *end_s, int c)
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
 	char	*start;
 
 	start = (char *)s;
-	i = 0;
 	while (*s)
 		s++;
 	return (findback_c(start, ++s, c));
