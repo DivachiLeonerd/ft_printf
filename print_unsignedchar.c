@@ -6,13 +6,13 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:38:51 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/11 12:27:53 by afonso           ###   ########.fr       */
+/*   Updated: 2022/02/14 08:48:12 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ft_printf.h>
 
-int	print_unsignedchar(unsigned int u)
+int	print_unsignedint(unsigned int u)
 {
 	char	*s;
 	int		counter;

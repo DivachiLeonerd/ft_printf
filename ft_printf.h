@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:15 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/11 15:45:44 by afonso           ###   ########.fr       */
+/*   Updated: 2022/02/14 08:54:12 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@
 # include <stdarg.h>
 
 int			ft_printf(const char *string, ...);
-int			print_string(const char *string);
 int			print_pointer(void *ptr_x);
 int			print_integer(int integer, char format);
-int			print_char(unsigned int chr);
-int			print_hexa(va_list ap, char format);
-int	print_unsignedchar(unsigned int u);
+int			print_hexa(va_list ap, char format, int counter);
+int			print_unsignedint(unsigned int u);
 
 #endif

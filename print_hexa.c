@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:16 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/11 16:03:40 by afonso           ###   ########.fr       */
+/*   Updated: 2022/02/14 08:51:23 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,19 @@ static	int	deci_hexa(char	*string, char format)
 	return (ft_strlen(string));
 }
 
-int	print_hexa(va_list ap, char format)
+int	print_hexa(va_list ap, char format, int counter)
 {
 	char			string[13];
 	unsigned int	i;
 	unsigned int	strlen;
-	int				counter;
 	unsigned int	x;
 
-	counter = 0;
 	if (format == 'u' || format == 'p')
 	{
 		if (format == 'u')
-			counter += print_unsignedchar(va_arg(ap, int));
+			counter += print_unsignedint(va_arg(ap, unsigned int));
 		if (format == 'p')
-			counter += print_pointer(va_arg(ap, unsigned int*));
+			counter += print_pointer(va_arg(ap, unsigned int *));
 		return (counter);
 	}
 	i = va_arg(ap, unsigned int);

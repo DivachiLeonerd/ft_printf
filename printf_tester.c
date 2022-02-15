@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/11 16:05:16 by afonso           ###   ########.fr       */
+/*   Updated: 2022/02/13 12:38:10 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ int	main(void)
 	char			c = 'F';
 
 	// print_hexa(u, 'p');
-	printf("Printf normal:\n");
-	printf("%d %i %u %s %c %x %X %p\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
-	printf("Agora o meu:\n");
-	ft_printf("%d %i %u %s %c %x %X %p\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
+	printf("Printf normal:\n%d %i %u %s agora %c %x %X %p %%\nAhora soy guapo\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
+	ft_printf("Print anormal:\n%d %i %u %s agora %c %x %X %p %%\nAhora soy guapo\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
 }
