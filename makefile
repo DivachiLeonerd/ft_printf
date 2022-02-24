@@ -15,7 +15,6 @@ all: ${NAME}
 	@${MAKE} -C ./libft/
 	@mv ./libft/*.o ./
 	@${LIB} ${NAME} ${OBJS} ${OBJS2}
-	@mv *.o ${OBJPATH}
 
 test: ${OBJS} mv_o2 ${OBJS2}
 	@${CC} ${CFLAGS} -o tester printf_tester.c ${OBJS} ${OBJS2}
