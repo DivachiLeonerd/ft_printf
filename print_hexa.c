@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:16 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/14 08:51:23 by afonso           ###   ########.fr       */
+/*   Updated: 2022/02/24 17:31:03 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,8 @@ static	int	deci_hexa(char	*string, char format)
 	return (ft_strlen(string));
 }
 
-int	print_hexa(va_list ap, char format, int counter)
+static	int	ft_handler(va_list ap, char format, int counter)
 {
-	char			string[13];
-	unsigned int	i;
-	unsigned int	strlen;
-	unsigned int	x;
-
 	if (format == 'u' || format == 'p')
 	{
 		if (format == 'u')
@@ -53,6 +48,18 @@ int	print_hexa(va_list ap, char format, int counter)
 			counter += print_pointer(va_arg(ap, unsigned int *));
 		return (counter);
 	}
+	return (0);
+}
+
+int	print_hexa(va_list ap, char format, int counter)
+{
+	char			string[13];
+	unsigned int	i;
+	unsigned int	strlen;
+	unsigned int	x;
+
+	if (format == 'u' || format == 'p')
+		return (counter += ft_handler(ap, format, counter));
 	i = va_arg(ap, unsigned int);
 	x = i;
 	strlen = 0;

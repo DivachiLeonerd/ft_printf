@@ -6,7 +6,7 @@
 /*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/15 18:46:46 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:15:29 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(void)
 	d = ft_printf("%s\n", "davi");
 	ft_printf("%d\n", d);
 	d = printf("%s\n", "davi");
+	d = ft_printf("%x", hexalow);
 	printf("%d\n", d);
 	printf("%d\n", x);
 	printf("%d\n", y);

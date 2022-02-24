@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:27:00 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/14 08:56:45 by afonso           ###   ########.fr       */
+/*   Updated: 2022/02/24 17:19:35 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	print_pointer(void	*ptr_x)
 	strlen = prepare_string(quotient, strlen, string);
 	ft_putstr_fd("0x", 1);
 	ft_putstr_fd(string, 1);
-	return (ft_strlen(string));
+	return (ft_strlen(string) + 2);
 }
 
 static	int	prepare_string(unsigned long long quotient, int strlen,

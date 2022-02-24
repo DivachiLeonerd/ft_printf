@@ -6,7 +6,7 @@
 /*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 12:00:57 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/15 18:47:39 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:36:22 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@ int	ft_printf(const char *format, ...)
 	return (counter);
 }
 
+static	int	chr_string_handler(va_list ap, char format)
+{
+	int	counter;
+
+	counter = 0;
+	if (format == '%')
+		ft_putchar_fd('%', 1);
+	else if (format == 's')
+		counter += print_string(va_arg(ap, char *)) - 1;
+	counter++;
+	return (counter);
+}
+
 static	int	fmt_handler(const char *format, va_list ap, int counter)
 {
 	while (*format)
@@ -39,13 +52,7 @@ static	int	fmt_handler(const char *format, va_list ap, int counter)
 			if (*format == 'd' || *format == 'i' || *format == 'c')
 				counter += print_integer(va_arg(ap, int), *format);
 			if (*format == '%' || *format == 's')
-			{
-				if (*format == '%')
-					ft_putchar_fd('%', 1);
-				else if (*format == 's')
-					counter += print_string(va_arg(ap, char *)) - 1;
-				counter++;
-			}
+				counter += chr_string_handler(ap, *format);
 		}
 		else
 		{
