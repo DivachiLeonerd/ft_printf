@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf_tester.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/15 11:02:36 by afonso           ###   ########.fr       */
+/*   Updated: 2022/02/15 18:46:46 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ int	main(void)
 	char			c = 'F';
 	int x;
 	int y;
+	int d;
 
-	x = printf("Printf normal:\n%d %i %u %s agora %c %x %X %p %%\nAhora soy guapo\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
-	y = ft_printf("Print anormal:\n%d %i %u %s agora %c %x %X %p %%\nAhora soy guapo\n", decimal, integer, u, "string", c, hexalow, hexalow, &hexalow);
+	x = printf("Printf normal:\n%d %i %u %s agora %c %x %X %p %%\na\n", decimal, integer, u, "O Davi e feioso", c, hexalow, hexalow, &hexalow);
+	y = ft_printf("Print anormal:\n%d %i %u %s agora %c %x %X %p %%\na\n", decimal, integer, u, "O Davi e feioso", c, hexalow, hexalow, &hexalow);
+	d = ft_printf("%s\n", "davi");
+	ft_printf("%d\n", d);
+	d = printf("%s\n", "davi");
+	printf("%d\n", d);
 	printf("%d\n", x);
 	printf("%d\n", y);
 }

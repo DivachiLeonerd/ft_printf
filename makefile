@@ -2,7 +2,7 @@ NAME := libftprintf.a
 CC := gcc
 CFLAGS := -I. -I./libft/ -Werror -Wextra -Wall
 OBJPATH := ./Objetos/
-OBJS = ft_printf.o print_hexa.o print_integer.o print_unsignedchar.o print_pointer.o
+OBJS = ft_printf.o print_hexa.o print_integer.o print_unsignedchar.o print_pointer.o print_string.o
 LIB := ar rcs
 OBJS2 = ft_putchar_fd.o ft_itoa.o ft_putstr_fd.o ft_calloc.o ft_strdup.o ft_strlen.o
 
