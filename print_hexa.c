@@ -6,7 +6,7 @@
 /*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:16 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/24 17:31:03 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:46:48 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 static	int	deci_hexa(char	*string, char format)
 {
 	unsigned int	i;
+	int				counter;
 
 	i = 0;
-	if (format == 'p')
-		ft_putstr_fd("0x", 1);
+	counter = 0;
+	if (string[i] == 0)
+	{
+		ft_putstr_fd("0", 1);
+		return (1);
+	}
 	while (string[i])
 	{
 		if (string[i] < 10)
@@ -43,7 +48,7 @@ static	int	ft_handler(va_list ap, char format, int counter)
 	if (format == 'u' || format == 'p')
 	{
 		if (format == 'u')
-			counter += print_unsignedint(va_arg(ap, unsigned int));
+			counter += print_unsigned_int(va_arg(ap, unsigned int));
 		if (format == 'p')
 			counter += print_pointer(va_arg(ap, unsigned int *));
 		return (counter);
