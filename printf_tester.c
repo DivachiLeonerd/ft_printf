@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/28 17:01:49 by afonso           ###   ########.fr       */
+/*   Updated: 2022/03/03 16:44:46 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int	main(void)
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
 
 	printf("***unsigned long long tester***\n\n");
-	counter = printf("ullmax:%p\nNULL:%p\null:%p\nNULL:%p\n", (void *)UINT64_MAX, NULL, (void *)UINT64_MAX - 1, NULL);
-	mycounter = ft_printf("ullmax:%p\nNULL:%p\null:%p\nNULL:%p\n", (void *)UINT64_MAX, NULL, (void *)UINT64_MAX - 1, NULL);
+	counter = printf("ullmax:%p\nNULL:%p\null:%p\nNULL:%p\n\n", (void *)UINT64_MAX, NULL, (void *)UINT64_MAX - 1, NULL);
+	mycounter = ft_printf("ullmax:%p\nNULL:%p\null:%p\nNULL:%p\n\n", (void *)UINT64_MAX, NULL, (void *)UINT64_MAX - 1, NULL);
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
 
 	printf("***hexa testers***\n\n");
-	counter = printf("umax:%x\numin:%x\nu%x",UINT32_MAX, 0, -1);
-	mycounter = ft_printf("umax:%x\numin:%x\nu%x",UINT32_MAX, 0, -1);
+	counter = printf("umax:%x\numin:%x\nu%x\n",UINT32_MAX, 0, -1);
+	mycounter = ft_printf("umax:%x\numin:%x\nu%x\n",UINT32_MAX, 0, -1);
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
 
 	printf("***char tester***\n\n");
@@ -45,7 +45,10 @@ int	main(void)
 
 	printf("***Miscelaneous tests***\n\n");
 	counter = printf("NULL pointer:%p VS NULL hexa:%x VS NULL Hexa:%X\n", NULL, -1, -1);
-	mycounter = ft_printf("NULL pointer:%p VS NULL hexa:%x VS NULL Hexa:%X\n", NULL, NULL, NULL);
+	mycounter = ft_printf("NULL pointer:%p VS NULL hexa:%x VS NULL Hexa:%X\n", NULL, -1, -1);
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
-
+	counter = printf("%p\nbolas\n", (void *)UINT64_MAX);
+	printf("%d\n", counter);
+	mycounter = ft_printf("%p\nbolas\n", (void *)UINT64_MAX);
+	ft_printf("%d\n", mycounter);
 }
