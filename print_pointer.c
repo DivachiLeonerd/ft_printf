@@ -6,7 +6,7 @@
 /*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:27:00 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/24 17:19:35 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:13:32 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,17 @@ static	int	prepare_string(unsigned long long quotient, int strlen,
 
 int	print_pointer(void	*ptr_x)
 {
-	char						string[13];
+	char						string[16];
 	int							strlen;
 	unsigned long long int		quotient;
 
-	if (!ptr_x)
+	if (ptr_x < 0 || ptr_x > (void *)UINT64_MAX)
 	{
 		ft_putstr_fd("(nil)", 1);
 		return (1);
 	}
-	strlen = 0;
 	quotient = (unsigned long long)ptr_x;
-	strlen = prepare_string(quotient, strlen, string);
+	strlen = prepare_string(quotient, 0, string);
 	ft_putstr_fd("0x", 1);
 	ft_putstr_fd(string, 1);
 	return (ft_strlen(string) + 2);
@@ -41,13 +40,18 @@ static	int	prepare_string(unsigned long long quotient, int strlen,
 	unsigned long long	temp;
 
 	temp = quotient;
+	if (!quotient)
+	{
+		temp = 1;
+		quotient = 16;
+	}
 	while (temp)
 	{
 			temp /= 16;
 			strlen++;
 	}
 	aux = strlen;
-	while (aux < 13)
+	while (aux < 16)
 		string[aux++] = '\0';
 	while (quotient)
 	{

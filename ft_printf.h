@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:15 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/28 11:53:41 by afonso           ###   ########.fr       */
+/*   Updated: 2022/03/03 13:25:24 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int			print_integer(int integer, char format);
 int			print_hexa(va_list ap, char format, int counter);
 int			print_unsigned_int(unsigned int u);
 int			print_string(char *string);
+char		*ft_utoa(unsigned int u);
 
 #endif

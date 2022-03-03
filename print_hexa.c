@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:16 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/28 15:12:40 by afonso           ###   ########.fr       */
+/*   Updated: 2022/03/03 13:25:58 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 static	int	deci_hexa(char	*string, char format)
 {
 	unsigned int	i;
+	int				counter;
 
 	i = 0;
-	if (format == 'p')
-		ft_putstr_fd("0x", 1);
+	counter = 0;
+	if (string[i] == 0)
+	{
+		ft_putstr_fd("0", 1);
+		return (1);
+	}
 	while (string[i])
 	{
 		if (string[i] < 10)
