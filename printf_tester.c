@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   printf_tester.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/24 18:38:44 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/28 17:01:49 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<stdint.h>
 #include"ft_printf.h"
 
 int	main(void)
@@ -30,8 +31,8 @@ int	main(void)
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
 
 	printf("***unsigned long long tester***\n\n");
-	counter = printf("ullmax:%p\nullmin:%p\null:%p\nNULL:%p\n", (void *)UINT64_MAX, NULL, (void *)-1, NULL);
-	mycounter = ft_printf("ullmax:%p\nullmin:%p\null:%p\nNULL:%p\n", UINT64_MAX, NULL, (void *)-1, NULL);
+	counter = printf("ullmax:%p\nNULL:%p\null:%p\nNULL:%p\n", (void *)UINT64_MAX, NULL, (void *)UINT64_MAX - 1, NULL);
+	mycounter = ft_printf("ullmax:%p\nNULL:%p\null:%p\nNULL:%p\n", (void *)UINT64_MAX, NULL, (void *)UINT64_MAX - 1, NULL);
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
 
 	printf("***hexa testers***\n\n");

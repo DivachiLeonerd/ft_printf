@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:15 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/15 16:59:10 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/28 11:53:41 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			ft_printf(const char *string, ...);
 int			print_pointer(void *ptr_x);
 int			print_integer(int integer, char format);
 int			print_hexa(va_list ap, char format, int counter);
-int			print_unsignedint(unsigned int u);
+int			print_unsigned_int(unsigned int u);
 int			print_string(char *string);
 
 #endif

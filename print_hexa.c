@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:16 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/24 17:31:03 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:12:40 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static	int	ft_handler(va_list ap, char format, int counter)
 	if (format == 'u' || format == 'p')
 	{
 		if (format == 'u')
-			counter += print_unsignedint(va_arg(ap, unsigned int));
+			counter += print_unsigned_int(va_arg(ap, unsigned int));
 		if (format == 'p')
 			counter += print_pointer(va_arg(ap, unsigned int *));
 		return (counter);
