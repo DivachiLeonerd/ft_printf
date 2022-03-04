@@ -58,9 +58,7 @@ static	char	*alloc_string(unsigned int n)
 {
 	unsigned int	power;
 	char			*string;
-	unsigned int	aux;
 
-	aux = n;
 	power = 0;
 	if (n == 0)
 		power++;
