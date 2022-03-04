@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/03/03 16:44:46 by afonso           ###   ########.fr       */
+/*   Updated: 2022/03/04 10:19:17 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ int	main(void)
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
 
 	printf("***char tester***\n\n");
-	printf("charmax:%c\ncharmin:%c\nchar:%c\n\n", 256, 0, 'c');
+	counter = printf("charmax:%c\ncharmin:%c\nchar:%c\n", 256, 0, 'c');
+	mycounter = printf("charmax:%c\ncharmin:%c\nchar:%c\n", 256, 0, 'c');
+	ft_printf("Counter:%d\nMycounter:%d\n", counter, mycounter);
 
-	printf("***Miscelaneous tests***\n\n");
+	printf("\n***Miscelaneous tests***\n\n");
 	counter = printf("NULL pointer:%p VS NULL hexa:%x VS NULL Hexa:%X\n", NULL, -1, -1);
 	mycounter = ft_printf("NULL pointer:%p VS NULL hexa:%x VS NULL Hexa:%X\n", NULL, -1, -1);
 	printf("counter:%d\nmycounter:%d\n\n", counter, mycounter);
@@ -51,4 +53,7 @@ int	main(void)
 	printf("%d\n", counter);
 	mycounter = ft_printf("%p\nbolas\n", (void *)UINT64_MAX);
 	ft_printf("%d\n", mycounter);
+	ft_printf("Tou a 100%%\n");
+	ft_printf("Tou a 100%");
+	// printf("Tou a 100%\n");
 }
