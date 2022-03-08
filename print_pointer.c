@@ -6,7 +6,7 @@
 /*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:27:00 by afonso            #+#    #+#             */
-/*   Updated: 2022/03/03 16:47:47 by afonso           ###   ########.fr       */
+/*   Updated: 2022/03/08 11:33:07 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	print_pointer(void	*ptr_x)
 {
 	char						string[16];
 	unsigned long long int		quotient;
-	int strlen;
+	int							strlen;
 
 	if (ptr_x == NULL)
 	{
@@ -37,7 +37,7 @@ int	print_pointer(void	*ptr_x)
 static	int	prepare_string(unsigned long long quotient, int strlen,
 		char *string)
 {
-	int		aux;
+	int					aux;
 	unsigned long long	temp;
 
 	temp = quotient;
