@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:39:16 by afonso            #+#    #+#             */
-/*   Updated: 2022/03/03 13:28:20 by afonso           ###   ########.fr       */
+/*   Updated: 2022/03/08 19:12:40 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,14 @@ static	int	deci_hexa(char	*string, char format)
 	}
 	while (string[i])
 	{
-		if (string[i] < 10)
-		{
-			string[i] = string[i] + 48;
-			i++;
-		}
-		if (format == 'x')
+		if ((format == 'x') && (string[i] != 48))
 			if (string[i] >= 10)
 				string[i] = string[i] + 87;
-		if (format == 'X')
+		if ((format == 'X') && (string[i] != 48))
 			if (string[i] >= 10)
 				string[i] = string[i] + 55;
+		if ((string[i] < 10) && (string[i] != 48))
+			string[i] = string[i] + 48;
 		i++;
 	}
 	ft_putstr_fd(string, 1);
@@ -56,7 +53,7 @@ static	int	ft_handler(va_list ap, char format, int counter)
 
 int	print_hexa(va_list ap, char format, int counter)
 {
-	char			string[13];
+	char			string[9];
 	unsigned int	i;
 	unsigned int	strlen;
 	unsigned int	x;
@@ -78,6 +75,8 @@ int	print_hexa(va_list ap, char format, int counter)
 	{
 		string[--strlen] = (char)(x % 16);
 		x = x / 16;
+		if (string[strlen] == 0)
+			string[strlen] += 48;
 	}
 	return (deci_hexa(string, format));
 }

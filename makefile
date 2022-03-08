@@ -16,6 +16,8 @@ all: ${NAME}
 	@mv ./libft/*.o ./
 	@${LIB} ${NAME} ${OBJS} ${OBJS2}
 
+mv_o2: ${NAME}
+
 test: ${OBJS} mv_o2 ${OBJS2}
 	@${CC} ${CFLAGS} -o tester printf_tester.c ${OBJS} ${OBJS2}
 	@./tester
