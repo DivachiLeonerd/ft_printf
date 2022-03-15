@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf_tester.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:49:44 by afonso            #+#    #+#             */
-/*   Updated: 2022/03/04 10:19:17 by afonso           ###   ########.fr       */
+/*   Updated: 2022/03/15 20:00:53 by atereso-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ int	main(void)
 	mycounter = ft_printf("%p\nbolas\n", (void *)UINT64_MAX);
 	ft_printf("%d\n", mycounter);
 	ft_printf("Tou a 100%%\n");
-	ft_printf("Tou a 100%");
-	// printf("Tou a 100%\n");
+	ft_printf("Tou a 100%\n");
+	counter = printf("%s\n", NULL);
+	printf("%d\n", counter);
+	printf("%x\n", 17);
+	ft_printf("%x\n", 17);
 }

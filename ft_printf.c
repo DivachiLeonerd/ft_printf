@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atereso- <atereso-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: afonso <afonso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 12:00:57 by afonso            #+#    #+#             */
-/*   Updated: 2022/02/24 17:36:22 by atereso-         ###   ########.fr       */
+/*   Updated: 2022/03/08 11:27:59 by afonso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,30 @@ static	int	chr_string_handler(va_list ap, char format)
 	return (counter);
 }
 
+static	int	is_valid_format(const char *format)
+{
+	int		i;
+	char	fmt_array[10];
+
+	fmt_array[0] = 'p';
+	fmt_array[1] = 'x';
+	fmt_array[2] = 'X';
+	fmt_array[3] = 'c';
+	fmt_array[4] = 'u';
+	fmt_array[5] = 's';
+	fmt_array[6] = 'i';
+	fmt_array[7] = 'd';
+	fmt_array[8] = '%';
+	fmt_array[9] = '\0';
+	i = 0;
+	while (*format != fmt_array[i] && *format)
+		i++;
+	if (!*format)
+		return (1);
+	else
+		return (0);
+}
+
 static	int	fmt_handler(const char *format, va_list ap, int counter)
 {
 	while (*format)
@@ -46,6 +70,8 @@ static	int	fmt_handler(const char *format, va_list ap, int counter)
 		if (*format == '%')
 		{
 			format++;
+			if (is_valid_format(format))
+				break ;
 			if (*format == 'p' || *format == 'x'
 				||*format == 'X' || *format == 'u')
 				counter += print_hexa(ap, *format, 0);

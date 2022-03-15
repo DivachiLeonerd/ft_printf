@@ -16,15 +16,9 @@ all: ${NAME}
 	@mv ./libft/*.o ./
 	@${LIB} ${NAME} ${OBJS} ${OBJS2}
 
-test: ${OBJS} mv_o2 ${OBJS2}
-	@${CC} ${CFLAGS} -o tester printf_tester.c ${OBJS} ${OBJS2}
-	@./tester
-mv_o2:
-	@${MAKE} -C ./libft/
-	@mv ./libft/*.o ./
-
+test:all
+	${CC} ${CFLAGS} printf_tester.c ${OBJS} ${OBJS2} && ./a.out
 clean:
-	@rm -f ${OBJPATH}*.o
 	@rm -f *.o
 	@rm -f tester
 
